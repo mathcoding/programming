@@ -17,3 +17,4 @@ Altri link utili:
 
 * [Documentazione ufficiale di Python3 (in inglese)](https://docs.python.org/3/)
 * [Documentazione tradotta in italiano (non completa)](http://docs.python.it/)
+* [Documentazione di Jupyter (in inglese)](https://jupyter.readthedocs.io/en/latest/index.html)
