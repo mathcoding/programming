@@ -18,3 +18,5 @@ Altri link utili:
 * [Documentazione ufficiale di Python3 (in inglese)](https://docs.python.org/3/)
 * [Documentazione tradotta in italiano (non completa)](http://docs.python.it/)
 * [Documentazione di Jupyter (in inglese)](https://jupyter.readthedocs.io/en/latest/index.html)
+* [Cheat Sheet per Jupyter Notebook](https://s3.amazonaws.com/assets.datacamp.com/blog_assets/Jupyter_Notebook_Cheat_Sheet.pdf)
+* [Shortcuts per Jupyter Notebook](https://www.cheatography.com/weidadeyue/cheat-sheets/jupyter-notebook/)
