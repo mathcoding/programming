@@ -80,16 +80,16 @@ il più grande numero intero che divide sia $a$ che $b$ senza resto.
 Esiste un metodo famoso, dovuto ad Euclide, per calcolare tale numero.
 L'idea dell'algoritmo si basa sull'osservazione che, se $r$ è il resto di quando $a$ è diviso per $b$, 
 allora i divisori comuni di $a$ e $b$ sono esattamente esattamente gli stessi divisori comuni tra $b$ e $r$. 
-Quindi possiamo usare l'equazione $$MCD(a,b) = MCD(n,r)$$ per ridurre il problema di 
+Quindi possiamo usare l'equazione $$MCD(a,b) = MCD(b,r)$$ per ridurre il problema di 
 trovare i divisori comuni calcolando il MCD tra coppie di numeri interi via via più piccoli. Per esempio:
 
 \begin{verbatim}
-MCD(206, 4) = MCD(40, 6) = MCD(6,4) = MCD(4,2) = MCD(2,0) = 2
+MCD(206, 40) = MCD(40, 6) = MCD(6,4) = MCD(4,2) = MCD(2,0) = 2
 \end{verbatim}
 
 Scrivere una procedura che calcola il massimo comune divisore usando l'algoritmo di Euclide.
-{\bf NOTA}: per calcolare il resto di una divisione tra due numeri interi si usa l'operatore modulo {\tt \%}
-(esempio: {\tt 7\%3 = 1}).
+{\bf NOTA}: per calcolare il resto di una divisione tra due numeri interi si usa l'operatore modulo {\tt \%}, 
+ovvero il simbolo percentuale (esempio: {\tt 7\%3 = 1}).
 
 \mybox{15}{3.5}
 
