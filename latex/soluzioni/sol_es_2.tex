@@ -1,0 +1,219 @@
+\documentclass[11pt,a4]{article}
+
+\usepackage[margin=2cm]{geometry}
+
+\usepackage{amsmath}
+\usepackage{url}
+
+\usepackage[utf8]{inputenc}
+
+% Default fixed font does not support bold face
+\DeclareFixedFont{\ttb}{T1}{txtt}{bx}{n}{10} % for bold
+\DeclareFixedFont{\ttm}{T1}{txtt}{m}{n}{10}  % for normal
+
+% Custom colors
+\usepackage{color}
+\definecolor{deepblue}{rgb}{0,0,0.5}
+\definecolor{deepred}{rgb}{0.6,0,0}
+\definecolor{deepgreen}{rgb}{0,0.5,0}
+
+\usepackage{listings}
+
+% Python style for highlighting
+\newcommand\pythonstyle{\lstset{
+language=Python,
+basicstyle=\ttm,
+otherkeywords={self},             % Add keywords here
+keywordstyle=\ttb\color{deepblue},
+emph={MyClass,__init__},          % Custom highlighting
+emphstyle=\ttb\color{deepred},    % Custom highlighting style
+stringstyle=\color{deepgreen},
+frame=tb,                         % Any extra options here
+showstringspaces=false            % 
+}}
+
+
+% Python environment
+\lstnewenvironment{python}[1][]
+{
+\pythonstyle
+\lstset{#1}
+}
+{}
+
+% Python for external files
+\newcommand\pythonexternal[2][]{{
+\pythonstyle
+\lstinputlisting[#1]{#2}}}
+
+% Python for inline
+\newcommand\pythoninline[1]{{\pythonstyle\lstinline!#1!}}
+
+
+\usepackage{collectbox}
+
+\newcommand{\mybox}[2]{$\quad$\fbox{
+\begin{minipage}{#1cm}
+\hfill\vspace{#2cm}
+\end{minipage}
+}}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\rhead{Programmazione 1 - Esercitazione 2}
+
+\include{book_header}
+
+\begin{document}
+\thispagestyle{empty}
+\hrule
+\begin{center}
+   {\Large {\bf Programmazione 1 \hspace{3cm} $\quad \quad$ Soluzioni Esercitazione 2}}
+\end{center}
+\hrule
+
+\section*{}
+Le soluzioni sono anche fornite in un unico script python sul sito: 
+\begin{center}
+	\url{https://github.com/mathcoding/programming/tree/master/scripts}
+\end{center}
+
+\begin{enumerate}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\item Scrivere una procedura che calcoli l'ennesimo numero di Fibonacci usando un {\bf processo iterativo}
+(si veda il {\tt Lab 4} per la definizione di processo iterativo).
+\begin{python}
+def FibRec(n):
+    """ Calcolo di Fibonacci con PROCESSO RICORSIVO """
+    if n == 0 or n == 1:
+        return n
+    return FibRec(n-1) + FibRec(n-2)
+
+def FibIter(n):
+    """ Calcolo di Fibonacci con PROCESSO ITERATIVO """
+    def FibI(a, b, counter):
+        if counter < 2:
+            return a
+        return FibI(a+b, a, counter-1)
+    
+    return FibI(1, 0, n)
+\end{python}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\item Una funzione $f$ è definita dalla regola seguente:
+\begin{align}
+	f(n) = \left\{\begin{array}{ll} n & \mbox{if } n<3 \\ f(n-1)+2\,f(n-2)+3\,f(n-3) & \mbox{if } n \geq 3 \end{array} \right.
+\end{align}
+\begin{enumerate}
+\item Si scriva una procedura che calcoli $f$ usando un {\bf processo ricorsivo}.
+\item Si scriva una procedura che calcoli $f$ usando un {\bf processo iterativo}.
+\end{enumerate}
+\begin{python}
+def FnRec(n):
+    """ Calcolo di f(n)  = f(n-1)+2*f(n-2)+3*f(n-3), con f(0)=0, f(1)=1, f(2)=2 
+        (uso di processo ricorsivo) """
+    if n < 3:
+        return n
+    return FnRec(n-1) + 2*FnRec(n-2) + 3*FnRec(n-3)
+
+def FnIter(n):
+    """ Calcolo di f(n)  = f(n-1)+2*f(n-2)+3*f(n-3), con f(0)=0, f(1)=1, f(2)=2 
+        (uso di processo iterativo) """
+    def FnI(a, b, c, counter):
+        if counter < 3:
+            return a
+        return FnI(a+2*b+3*c, a, b, counter-1)
+    
+    return FnI(2, 1, 0, n)
+\end{python}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\item Si scrive un predicato che ci dica se un dato numero $n$ sia un numero primo.
+Si può usare la definizione che $n$ è un numero primo, se e solo se $n$ è il suo più piccolo divisore maggiore di uno
+(suggerimento: scrivere prima una funzione che trova il più piccolo divisore di $n$).
+
+È possibile scrivere questa procedura in modo tale che l'ordine di crescita per il numero di operazioni richieste sia $\Theta(\sqrt{n})$?
+\begin{python}
+def IsPrime(n):
+    """ Predicato che restituisce "True" quando "n" e` un numero primo """
+    def MinorDivisore(a, n):
+        if a*a > n:
+            return n
+        if n % a == 0:
+            return a
+        return MinorDivisore(a+1, n)
+    
+    if n == 0:
+        return False
+    if n == 1:
+        return True
+    return MinorDivisore(2,n) == n
+\end{python}
+ 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\item La procedura {\tt Sommatoria} vista nel {\tt Lab 7} genera un processo ricorsivo lineare.
+La stessa procedura può essere riscritta in modo tale che il processo generato sia iterativo:
+scrivere la procedura che genera un processo iterativo lineare.
+\begin{python}
+def SommatoriaIter(F, a, Next, b):
+    def SommatoriaI(a, b, accumulator):
+        if a > b:
+            return accumulator
+        return SommatoriaI(Next(a), b, accumulator+F(a))
+    
+    return SommatoriaI(a, b, 0)    
+def IntegraleIter(F, a, b, dx):
+    def AddDx(x):
+        return x + dx
+    return dx*SommatoriaIter(F, a+dx/2, AddDx, b)
+\end{python}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\item In maniera analoga alla funzione {\tt Sommatoria}, si può definire una funzione {\tt Produttoria}
+che restituisce i valori dei prodotti di una funzione valutata in un insieme di punti definiti da un dato intervallo $[a,b]$:
+$$
+	\prod_{n=a}^b f(n) = f(a)\cdot ... \cdot f(b)
+$$
+Scrivere tale funzione e mostrare come sia possibile usarla per calcolare $n!$
+\begin{python}
+def ProduttoriaRec(F, a, Next, b):
+    if a > b:
+        return 1
+    else:
+        return F(a) * ProduttoriaRec(F, Next(a), Next, b)
+print("Es. 2.5 => ProduttoriaRec(1, 5): ", ProduttoriaRec(lambda x: x, 1, Inc, 5))
+\end{python}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+\item Eseguire il grafico sovrapposto delle funzioni seguenti: 
+$$R(n)=n, R(n)=10^5\,n, R(n)=n^2, R(n)=\log{n}, R(n)=n\log{n}, R(n)=1.6^n, R(n)=2^n.$$
+\noindent {\bf ATTENZIONE:} Questa procedura potrebbe non funzionare correttamente all'interno di Spyder.
+Tuttavia uno script python può essere eseguito anche da linea di comando, come visto in laboratorio.
+Per i grafici, si consiglia di vedere pochi grafici alla volta con velocità di crescita simili.
+
+\begin{python}
+from numpy import linspace
+from matplotlib.pyplot import plot, xlabel, ylabel, show, legend, clf
+from math import log
+    
+def PlotFunzioni():   
+    D = linspace(1, 10, 100)
+    clf()
+    #plot(D, [x for x in D], label="y=x")
+    plot(D, [x*x for x in D], label="y=x^2")
+    plot(D, [log(x) for x in D], label="y=log(x)")
+    plot(D, [x*log(x) for x in D], label="y=x*log(x)")
+    
+    #D = linspace(1, 10, 100)
+    #plot(D, [1.6**x for x in D], label="y=1.6^x")
+    #plot(D, [2**x for x in D], label="y=2^x")
+    xlabel("x")
+    ylabel("y=f(x)")
+    legend(loc="upper left", shadow=True)
+    show()
+\end{python}
+
+
+\end{enumerate}
+
+\end{document}
