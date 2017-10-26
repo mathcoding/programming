@@ -1,0 +1,181 @@
+\documentclass[11pt,a4]{article}
+
+\usepackage[margin=2cm]{geometry}
+
+\usepackage{amsmath}
+\usepackage{url}
+
+\usepackage{amsmath}
+\usepackage{url}
+
+\usepackage[utf8]{inputenc}
+
+% Default fixed font does not support bold face
+\DeclareFixedFont{\ttb}{T1}{txtt}{bx}{n}{10} % for bold
+\DeclareFixedFont{\ttm}{T1}{txtt}{m}{n}{10}  % for normal
+
+% Custom colors
+\usepackage{color}
+\definecolor{deepblue}{rgb}{0,0,0.5}
+\definecolor{deepred}{rgb}{0.6,0,0}
+\definecolor{deepgreen}{rgb}{0,0.5,0}
+
+\usepackage{listings}
+
+% Python style for highlighting
+\newcommand\pythonstyle{\lstset{
+language=Python,
+basicstyle=\ttm,
+otherkeywords={self},             % Add keywords here
+keywordstyle=\ttb\color{deepblue},
+emph={MyClass,__init__},          % Custom highlighting
+emphstyle=\ttb\color{deepred},    % Custom highlighting style
+stringstyle=\color{deepgreen},
+frame=tb,                         % Any extra options here
+showstringspaces=false            % 
+}}
+
+
+% Python environment
+\lstnewenvironment{python}[1][]
+{
+\pythonstyle
+\lstset{#1}
+}
+{}
+
+% Python for external files
+\newcommand\pythonexternal[2][]{{
+\pythonstyle
+\lstinputlisting[#1]{#2}}}
+
+% Python for inline
+\newcommand\pythoninline[1]{{\pythonstyle\lstinline!#1!}}
+
+
+\usepackage{collectbox}
+
+\newcommand{\mybox}[2]{$\quad$\fbox{
+\begin{minipage}{#1cm}
+\hfill\vspace{#2cm}
+\end{minipage}
+}}
+
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\rhead{Programmazione 1 - Esercitazione 3}
+
+\include{book_header}
+
+\begin{document}
+\thispagestyle{empty}
+\hrule
+\begin{center}
+   {\Large {\bf Programmazione 1 \hspace{3cm} $\quad \quad \quad$ Esercitazione 3}}
+\end{center}
+{\bf Cognome: }\hspace{2.5cm} {\bf Nome: } \hspace{2.5cm} {\bf Matricola: } \\\
+\hrule
+
+\section*{}
+\begin{enumerate}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\item Mostrare come le due funzioni {\tt Sommatoria} e {\tt Produttoria} viste nell'esercitazione precedente, sono
+entrambe dei casi particolare di una più generica funzione che possiamo chiamare {\tt Accumula} e specificare come segue:
+\begin{python}
+def Accumula(Operazione, ElementoNeutro, F, a, Next, b):
+    # DA COMPLETARE COME ESERCIZIO
+\end{python}
+La funzione {\tt Accumula} prende in input tre funzioni:
+\begin{enumerate}
+\item {\tt Operazione}, che è la funzione che serve per "combinare" i valori calcolati
+\item {\tt F}, che è la funzione da applicare a ciascun termine enumerato
+\item {\tt Next}, che è la funzione che ci dice come calcolare il prossimo valore da valutare
+\end{enumerate}		
+		e prende in input 3 valori:
+\begin{enumerate}
+\item {\tt ElementoNeutro}, che è l'elemento neutro rispetto l'operazione definita nella procedura {\tt Operazione}
+\item {\tt a}, il primo elemento della sequenza da considerare
+\item {\tt b}, che è l'ultimo elemento da considerare 
+\end{enumerate}
+
+Si noti che a partire da questa funzione, si può definire la funzione {\tt Sommatoria}, come segue:
+\begin{python}
+def SommatoriaAcc(F, a, Next, b):
+    return Accumulate(add, 0, F, a, Next, b)
+\end{python}
+Come possiamo definire la produttoria?
+
+\begin{enumerate}
+\item Scrivere una versione di accumulate che genera un processo ricorsivo. 
+\item Scrivere una versione di accumulate che genera un processo iterativo. 
+\end{enumerate}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\item Una funzione ancora più generale di {\tt Accumula} è la funzione {\tt FiltraAccumula} che introduce l'idea di 
+avere un {\it filtro} sui valori da accumulare: vengono combinati dalla operazioni specificata in input solo quegli elementi
+che soddisfano un certo predicato, descritto da una funzione {\tt Filter}. Implementare la seguente procedura:
+\begin{python}
+def FiltraAccumula(Filter, Operazione, ElementoNeutro, F, a, Next, b):
+    # DA COMPLETARE COME ESERCIZIO
+\end{python}
+Usare la funzione definita sopra per calcolare:
+\begin{enumerate}
+\item La somma dei quadrati dei numeri primi nell'intervallo $[a,b]$.
+\item Il prodotto di tutti i numeri primi minori di $n$ che sono primi rispetto ad $n$ (ovvero tutti i numeri interi positivi
+$i < n$ tali che $MCD(n,i) = 1$.
+\end{enumerate}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\item Scrivere un costruttore {\tt MakeRange(a, b)} che costruisce una lista (come catena di coppie, come visto a lezione)
+di numeri interi compresi tra {\tt a} e {\tt b}.
+
+\mybox{15}{1.5}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\item Scrivere una procedura {\tt Append(As, Bs} che prende in input due liste {\tt As} e {\tt Bs}, 
+e restituisce un'unica lista che contiene prima tutti gli elementi della prima lista, e poi tutti quelli della seconda lista.
+
+\mybox{15}{2.0}
+ 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\item Scrivere una procedura che prende in input una lista e restituisce la stessa lista ma con l'ordine degli elementi invertiti. 
+Esempio: la lista (1, (2, (3,None))) diventa (3, (2, (1, None))).
+
+\mybox{15}{2.5}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\item Scrivere una procedura {\tt Scale(Ls, a)} che moltiplica ogni elemento della lista {\tt Ls} per il termine {\tt a}.
+
+\mybox{15}{1.5}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\item Scrivere una procedura {\tt Quadrati(Ls, a)} che calcola il quadrato di ogni elemento della lista {\tt Ls}.
+
+\mybox{15}{1.5}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\item 
+\begin{enumerate}
+\item Scrivere una procedura {\tt Map(F, Ls)} che applica la funzione {\tt F} ad ogni elemento della lista {\tt Ls}.
+\item Riscrivere le due funzioni precedenti {\tt Scale} e {\tt Quadrati}, usando la funzione {\tt Map}.
+\end{enumerate}
+
+\mybox{15}{2.5}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\item Scrivere una funzione {\tt Filter(P, Ls)} che prende in input un predicato {\tt P} e una lista {\tt Ls}
+e restituisce in output la lista di elementi che soddisfano il predicato {\tt P}. Usare la funzione {\tt Filter}
+e {\tt IsPrime} dell'esercitazione 2, per ottenere la lista dei numeri primi compresi tra 1 e 30.
+
+
+\mybox{15}{2.5}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\item {\bf CHALLENGE (facoltativo)}: Un autobotte che trasporta tre tipi di carburante da una raffineria ad un punto vendita
+%ha una capienza di 41 Kl, suddivisi in 5 scomparti con capienza rispettivamente di 14, 5, 3, 7,e 11 Kl ciascuno. Ogni scomparto
+%può contenere un solo tipo di carburante, ma carburanti dello stesso tipo di clienti diversi possono essere mischiati.
+
+\end{enumerate}
+
+\end{document}
