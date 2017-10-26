@@ -82,40 +82,41 @@ showstringspaces=false            %
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \item Mostrare come le due funzioni {\tt Sommatoria} e {\tt Produttoria} viste nell'esercitazione precedente, sono
-entrambe dei casi particolare di una più generica funzione che possiamo chiamare {\tt Accumula} e specificare come segue:
+entrambe dei casi particolare di una più generica funzione che possiamo chiamare {\tt Accumula}:
 \begin{python}
 def Accumula(Operazione, ElementoNeutro, F, a, Next, b):
     # DA COMPLETARE COME ESERCIZIO
 \end{python}
-La funzione {\tt Accumula} prende in input tre funzioni:
+La funzione {\tt Accumula} prende in input tre funzioni e tre valori:
 \begin{enumerate}
 \item {\tt Operazione}, che è la funzione che serve per "combinare" i valori calcolati
 \item {\tt F}, che è la funzione da applicare a ciascun termine enumerato
-\item {\tt Next}, che è la funzione che ci dice come calcolare il prossimo valore da valutare
-\end{enumerate}		
-		e prende in input 3 valori:
-\begin{enumerate}
+\item {\tt Next}, che è la funzione che ci dice come calcolare il prossimo valore da valutare dopo {\tt a}
 \item {\tt ElementoNeutro}, che è l'elemento neutro rispetto l'operazione definita nella procedura {\tt Operazione}
 \item {\tt a}, il primo elemento della sequenza da considerare
 \item {\tt b}, che è l'ultimo elemento da considerare 
 \end{enumerate}
+{\tt Accumula} restituisce in output il valore accumulato combinando tramite l'{\tt Operazione} specificata i valori ottenuti
+applicando la funzione {\tt F} ad ogni elemento della sequenza che si ottiene
+applicando ad {\tt a} la funzione {\tt Next} sino a quando non si supera il valore {\tt b}.
+Il {\tt ValoreNeutro} viene restituito quando applicando {\tt Next} ad {\tt a} viene superato il valore {\tt b}.
 
 Si noti che a partire da questa funzione, si può definire la funzione {\tt Sommatoria}, come segue:
 \begin{python}
-def SommatoriaAcc(F, a, Next, b):
+def Sommatoria(F, a, Next, b):
     return Accumulate(add, 0, F, a, Next, b)
 \end{python}
-Come possiamo definire la produttoria?
 
 \begin{enumerate}
+\item Come possiamo definire la produttoria?
 \item Scrivere una versione di accumulate che genera un processo ricorsivo. 
 \item Scrivere una versione di accumulate che genera un processo iterativo. 
 \end{enumerate}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \item Una funzione ancora più generale di {\tt Accumula} è la funzione {\tt FiltraAccumula} che introduce l'idea di 
-avere un {\it filtro} sui valori da accumulare: vengono combinati dalla operazioni specificata in input solo quegli elementi
-che soddisfano un certo predicato, descritto da una funzione {\tt Filter}. Implementare la seguente procedura:
+avere un {\it filtro} sui valori da accumulare: vengono combinati dalla operazione specificata in input solo quegli elementi
+che soddisfano un certo predicato dato dalla funzione {\tt Filter}. Implementare la seguente procedura:
 \begin{python}
 def FiltraAccumula(Filter, Operazione, ElementoNeutro, F, a, Next, b):
     # DA COMPLETARE COME ESERCIZIO
@@ -124,7 +125,7 @@ Usare la funzione definita sopra per calcolare:
 \begin{enumerate}
 \item La somma dei quadrati dei numeri primi nell'intervallo $[a,b]$.
 \item Il prodotto di tutti i numeri primi minori di $n$ che sono primi rispetto ad $n$ (ovvero tutti i numeri interi positivi
-$i < n$ tali che $MCD(n,i) = 1$.
+$i < n$ tali che $MCD(i,n) = 1$.
 \end{enumerate}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -134,16 +135,10 @@ di numeri interi compresi tra {\tt a} e {\tt b}.
 \mybox{15}{1.5}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\item Scrivere una procedura {\tt Append(As, Bs} che prende in input due liste {\tt As} e {\tt Bs}, 
+\item Scrivere una procedura {\tt Append(As, Bs)} che prende in input due liste {\tt As} e {\tt Bs}, 
 e restituisce un'unica lista che contiene prima tutti gli elementi della prima lista, e poi tutti quelli della seconda lista.
 
 \mybox{15}{2.0}
- 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\item Scrivere una procedura che prende in input una lista e restituisce la stessa lista ma con l'ordine degli elementi invertiti. 
-Esempio: la lista (1, (2, (3,None))) diventa (3, (2, (1, None))).
-
-\mybox{15}{2.5}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \item Scrivere una procedura {\tt Scale(Ls, a)} che moltiplica ogni elemento della lista {\tt Ls} per il termine {\tt a}.
@@ -176,6 +171,11 @@ e {\tt IsPrime} dell'esercitazione 2, per ottenere la lista dei numeri primi com
 %ha una capienza di 41 Kl, suddivisi in 5 scomparti con capienza rispettivamente di 14, 5, 3, 7,e 11 Kl ciascuno. Ogni scomparto
 %può contenere un solo tipo di carburante, ma carburanti dello stesso tipo di clienti diversi possono essere mischiati.
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\item Scrivere una procedura che prende in input una lista e restituisce la stessa lista, ma con l'ordine degli elementi invertiti. 
+Esempio: la lista (1, (2, (3,None))) diventa (3, (2, (1, None))).
+
+\mybox{15}{2.5}
 \end{enumerate}
 
 \end{document}
