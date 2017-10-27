@@ -82,7 +82,7 @@ showstringspaces=false            %
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \item Mostrare come le due funzioni {\tt Sommatoria} e {\tt Produttoria} viste nell'esercitazione precedente, sono
-entrambe dei casi particolare di una più generica funzione che possiamo chiamare {\tt Accumula}:
+entrambe dei casi particolari di una più generica funzione che possiamo chiamare {\tt Accumula}:
 \begin{python}
 def Accumula(Operazione, ElementoNeutro, F, a, Next, b):
     # DA COMPLETARE COME ESERCIZIO
@@ -104,19 +104,19 @@ Il {\tt ValoreNeutro} viene restituito quando applicando {\tt Next} ad {\tt a} v
 Si noti che a partire da questa funzione, si può definire la funzione {\tt Sommatoria}, come segue:
 \begin{python}
 def Sommatoria(F, a, Next, b):
-    return Accumulate(add, 0, F, a, Next, b)
+    return Accumulate(add, 0, F, a, Next, b) # NOTA: from operator import add
 \end{python}
 
 \begin{enumerate}
 \item Come possiamo definire la produttoria?
-\item Scrivere una versione di accumulate che genera un processo ricorsivo. 
-\item Scrivere una versione di accumulate che genera un processo iterativo. 
+\item Scrivere una versione di {\tt Accumula} che genera un processo ricorsivo. 
+\item Scrivere una versione di {\tt Accumula} che genera un processo iterativo. 
 \end{enumerate}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \item Una funzione ancora più generale di {\tt Accumula} è la funzione {\tt FiltraAccumula} che introduce l'idea di 
 avere un {\it filtro} sui valori da accumulare: vengono combinati dalla operazione specificata in input solo quegli elementi
-che soddisfano un certo predicato dato dalla funzione {\tt Filter}. Implementare la seguente procedura:
+che soddisfano il predicato {\tt Filter}. Implementare la seguente procedura:
 \begin{python}
 def FiltraAccumula(Filter, Operazione, ElementoNeutro, F, a, Next, b):
     # DA COMPLETARE COME ESERCIZIO
@@ -141,28 +141,28 @@ e restituisce un'unica lista che contiene prima tutti gli elementi della prima l
 \mybox{15}{2.0}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\item Scrivere una procedura {\tt Scale(Ls, a)} che moltiplica ogni elemento della lista {\tt Ls} per il termine {\tt a}.
+\item Scrivere una procedura {\tt Scala(As, a)} che moltiplica ogni elemento della lista {\tt As} per il termine {\tt a}.
 
 \mybox{15}{1.5}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\item Scrivere una procedura {\tt Quadrati(Ls, a)} che calcola il quadrato di ogni elemento della lista {\tt Ls}.
+\item Scrivere una procedura {\tt Quadrati(As, a)} che calcola il quadrato di ogni elemento della lista {\tt As}.
 
 \mybox{15}{1.5}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \item 
 \begin{enumerate}
-\item Scrivere una procedura {\tt Map(F, Ls)} che applica la funzione {\tt F} ad ogni elemento della lista {\tt Ls}.
-\item Riscrivere le due funzioni precedenti {\tt Scale} e {\tt Quadrati}, usando la funzione {\tt Map}.
+\item Scrivere una procedura {\tt Map(F, As)} che applica la funzione {\tt F} ad ogni elemento della lista {\tt As}.
+\item Riscrivere le due funzioni precedenti {\tt Scala} e {\tt Quadrati}, usando la funzione {\tt Map}.
 \end{enumerate}
 
-\mybox{15}{2.5}
+\mybox{15}{2.0}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\item Scrivere una funzione {\tt Filter(P, Ls)} che prende in input un predicato {\tt P} e una lista {\tt Ls}
+\item Scrivere una funzione {\tt Filter(P, As)} che prende in input un predicato {\tt P} e una lista {\tt As}
 e restituisce in output la lista di elementi che soddisfano il predicato {\tt P}. Usare la funzione {\tt Filter}
-e {\tt IsPrime} dell'esercitazione 2, per ottenere la lista dei numeri primi compresi tra 1 e 30.
+e la {\tt IsPrime} dell'esercitazione 2, per ottenere la lista dei numeri primi compresi tra 1 e 30.
 
 
 \mybox{15}{2.5}
@@ -172,8 +172,8 @@ e {\tt IsPrime} dell'esercitazione 2, per ottenere la lista dei numeri primi com
 %può contenere un solo tipo di carburante, ma carburanti dello stesso tipo di clienti diversi possono essere mischiati.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\item Scrivere una procedura che prende in input una lista e restituisce la stessa lista, ma con l'ordine degli elementi invertiti. 
-Esempio: la lista (1, (2, (3,None))) diventa (3, (2, (1, None))).
+\item Scrivere una procedura {\tt Reverse(As)} che prende in input una lista {\tt As} e restituisce la stessa lista, ma con l'ordine degli elementi invertiti. 
+Esempio: la lista {\tt (1, (2, (3, None)))} diventa {\tt (3, (2, (1, None)))}.
 
 \mybox{15}{2.5}
 \end{enumerate}
