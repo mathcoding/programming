@@ -6,6 +6,18 @@ Libreria per la gestione di liste create usando una catena di coppie
 """
 
 from pairslist_impl import Head, Tail, EmptyList, MakeList
+from random import seed, randint
+
+# Inizializza il generatore di numeri casuali
+# Vedi la documentazione del modulo random:
+# https://docs.python.org/3/library/random.html
+seed(13)
+def MakeRandomInts(n, a, b):
+    """ Restituisce una lista n di numeri causali, uniformente distribuiti
+        nell'intervallo [a,b] (estremi compresi) """
+    if n == 0:
+        return EmptyList()
+    return MakeList(randint(a,b), MakeRandomInts(n-1, a, b))
 
 
 def PrintList(As):
@@ -103,9 +115,12 @@ def Reverse(As):
 #-----------------------------------------------
 if __name__ == "__main__":
     Ls = MakeRange(1, 5)
-    
     print("MakeList(7): ", end='')
     PrintList(Ls)
+    
+    Rs = MakeRandomInts(10, 1, 100)
+    print("MakeRandomInts(10, 1, 100): ", end='')
+    PrintList(Rs)
     
     Cs = MakeRange(3,7)
     print("MakeRange(3,7): ", end='')
