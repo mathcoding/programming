@@ -1,6 +1,5 @@
-notebooks/.ipynb_checkpoints/Lab 1-checkpoint.ipynb
-notebooks/.ipynb_checkpoints/Lab 3-checkpoint.ipynb
-notebooks/.ipynb_checkpoints/Lab 2-checkpoint.ipynb
+.ipynb_checkpoints
+*/.ipynb_checkpoints/*
 *.aux
 *.log
 *.out
