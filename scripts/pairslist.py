@@ -5,7 +5,7 @@ Libreria per la gestione di liste create usando una catena di coppie
 @author: gualandi
 """
 
-from pairlists_impl import Head, Tail, EmptyList, MakeList
+from pairslist_impl import Head, Tail, EmptyList, MakeList
 
 
 def PrintList(As):
@@ -128,8 +128,3 @@ if __name__ == "__main__":
     print("Filter:", Filter(lambda x: x % 2 == 0, Ls))
     
     print("Reverse:", Reverse(Ls))    
-    
-    print("Reverse:", Sum(Ls))
-    Xs = MakeRange(1, 5)
-    print("Reverse:", Prod(Xs))
-    PrintList(Xs)
