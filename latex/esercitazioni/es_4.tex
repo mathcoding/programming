@@ -1,0 +1,168 @@
+\documentclass[11pt,a4]{article}
+
+\usepackage[margin=2cm]{geometry}
+
+\usepackage{amsmath}
+\usepackage{url}
+
+\usepackage{amsmath}
+\usepackage{url}
+
+\usepackage[utf8]{inputenc}
+
+% Default fixed font does not support bold face
+\DeclareFixedFont{\ttb}{T1}{txtt}{bx}{n}{10} % for bold
+\DeclareFixedFont{\ttm}{T1}{txtt}{m}{n}{10}  % for normal
+
+% Custom colors
+\usepackage{color}
+\definecolor{deepblue}{rgb}{0,0,0.5}
+\definecolor{deepred}{rgb}{0.6,0,0}
+\definecolor{deepgreen}{rgb}{0,0.5,0}
+
+\usepackage{listings}
+
+% Python style for highlighting
+\newcommand\pythonstyle{\lstset{
+language=Python,
+basicstyle=\ttm,
+otherkeywords={self},             % Add keywords here
+keywordstyle=\ttb\color{deepblue},
+emph={MyClass,__init__},          % Custom highlighting
+emphstyle=\ttb\color{deepred},    % Custom highlighting style
+stringstyle=\color{deepgreen},
+frame=tb,                         % Any extra options here
+showstringspaces=false            % 
+}}
+
+
+% Python environment
+\lstnewenvironment{python}[1][]
+{
+\pythonstyle
+\lstset{#1}
+}
+{}
+
+% Python for external files
+\newcommand\pythonexternal[2][]{{
+\pythonstyle
+\lstinputlisting[#1]{#2}}}
+
+% Python for inline
+\newcommand\pythoninline[1]{{\pythonstyle\lstinline!#1!}}
+
+
+\usepackage{collectbox}
+
+\newcommand{\mybox}[2]{$\quad$\fbox{
+\begin{minipage}{#1cm}
+\hfill\vspace{#2cm}
+\end{minipage}
+}}
+
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\rhead{Programmazione 1 - Esercitazione 4}
+
+\include{book_header}
+
+\begin{document}
+\thispagestyle{empty}
+\hrule
+\begin{center}
+   {\Large {\bf Programmazione 1 \hspace{3cm} $\quad \quad \quad$ Esercitazione 4}}
+\end{center}
+{\bf Cognome: }\hspace{2.5cm} {\bf Nome: } \hspace{2.5cm} {\bf Matricola: } \\\
+\hrule
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{}
+
+Obiettivo di questa esercitazione è di completare la vostra libreria {\tt pairslist} con tutte le funzionalità
+più importanti di solito implementate in una struttura dati di tipo LISTA.
+
+\begin{enumerate}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\item Scrivere un predicato {\tt Cointains(As, value)} che prende in input una lista {\tt As} e un valore {\tt value} 
+e restituisce {\tt True} se la lista {\tt As} contiene il valore {\tt value}, {\tt False} altrimenti.
+
+\mybox{15}{2.0}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\item Scrivere una procedura {\tt Count(As, value)} che prende in input una lista {\tt As} e un valore {\tt value} 
+e conta il numero di volte che {\tt value} è contenuto in {\tt As}.
+
+\mybox{15}{2.0}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\item Scrivere una procedura {\tt RemoveFirst(As, value)} che prende in input una lista {\tt As} e un valore {\tt value} 
+e rimuove dalla lista il primo valore di {\tt value} nella lista {\tt As}.
+
+\mybox{15}{2.0}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\item Scrivere una procedura {\tt RemoveAll(As, value)} che prende in input una lista {\tt As} e un valore {\tt value} 
+e rimuove dalla lista tutti i valori di {\tt value} dalla lista {\tt As}.
+
+\mybox{15}{2.0}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\item Si consideri la funzione {\tt FoldRight(P, As, v)} vista a lezione:
+
+\begin{python}
+def FoldRight(P, As, v):
+    if IsEmpty(As):
+        return v
+    return P(Head(As), FoldRight(P, Tail(As), v))
+\end{python}
+
+Molti funzioni sulle liste possono essere riscritte in termini della {\tt FoldRight}.
+Per esempio, la funzione {\tt Length(As)}, può essere scritta nel modo seguente:
+\begin{python}
+def FoldLength(Ls):
+    """ Lunghezza di una lista in termini di fold """
+    return FoldRight(lambda x,y: 1+y, Ls, 0)
+\end{python}
+
+Usando la funzione {\tt FoldRight}, si scrivano le funzioni seguenti:
+
+\begin{enumerate}
+\item {\tt Sum(As)}: calcola la somma dei valori nella lista {\tt As}
+
+\mybox{15}{2.0}
+
+\item {\tt Prod(As)}: calcola la produttoria dei valori nella lista {\tt As}
+
+\mybox{15}{2.0}
+
+\item {\tt Min(As)}: trova il minimo dei valori nella lista {\tt As}
+
+\mybox{15}{2.0}
+
+\item {\tt Max(As)}: trova il massimo dei valori nella lista {\tt As}
+
+\mybox{15}{2.0}
+
+\item {\tt FoldMap(F, As)}: definisce la funzione {\tt Map} in termini di {\tt FoldRight}
+
+\mybox{15}{2.0}
+
+\item {\tt FoldFilter(P, As)}: definisce la funzione {\tt Filter} in termini di {\tt FoldRight}
+
+\mybox{15}{2.0}
+
+\item {\tt FoldReverse(As)}: definisce la funzione {\tt Reverse} in termini di {\tt FoldRight}
+
+\mybox{15}{2.0}
+
+\end{enumerate}
+
+
+\end{enumerate}
+
+\end{document}

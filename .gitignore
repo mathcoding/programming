@@ -1,5 +1,6 @@
 .ipynb_checkpoints
 */.ipynb_checkpoints/*
+scripts/__pycache__/*
 *.aux
 *.log
 *.out
