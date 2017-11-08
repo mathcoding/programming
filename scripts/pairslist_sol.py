@@ -5,21 +5,8 @@ Libreria per la gestione di liste create usando una catena di coppie
 @author: gualandi
 """
 
-#from pairslist_impl import Head, Tail, EmptyList, MakeList
-from pairslist_array import Head, Tail, EmptyList, MakeList
-
-from random import randint
-
-# Inizializza il generatore di numeri casuali
-# Vedi la documentazione del modulo random:
-# https://docs.python.org/3/library/random.html
-def MakeRandomInts(n, a, b):
-    """ Restituisce una lista n di numeri causali, uniformente distribuiti
-        nell'intervallo [a,b] (estremi compresi) """
-    if n == 0:
-        return EmptyList()
-    return MakeList(randint(a,b), MakeRandomInts(n-1, a, b))
-
+from pairslist_impl import Head, Tail, EmptyList, MakeList
+#from pairslist_array import Head, Tail, EmptyList, MakeList
 
 def PrintList(As):
     """ Pretty print for a list of elements """
@@ -50,6 +37,17 @@ def MakeRange(a, b):
 
     return MakeI(a)
 
+from random import seed, randint
+# Inizializza il generatore di numeri casuali
+seed(13)
+def MakeRandomInts(n, a, b):
+    """ Restituisce una lista n di numeri causali, uniformente distribuiti
+        nell'intervallo [a,b] (estremi compresi) """
+    if n == 0:
+        return EmptyList()
+    return MakeList(randint(a,b), MakeRandomInts(n-1, a, b))
+
+
 def Nth(As, i):
     """ Restituisce l'i-esimo elemento della lista As """
     if IsEmpty(As):
@@ -58,18 +56,6 @@ def Nth(As, i):
         return Head(As)
     return Nth(Tail(As), i-1)
 
-def Equal(As, Bs):
-    """ Check if two lists have the same sequence of elements """
-    if IsEmpty(As) and IsEmpty(Bs):
-        return True
-    if IsEmpty(As) and not IsEmpty(Bs):
-        return False
-    if not IsEmpty(As) and IsEmpty(Bs):
-        return False
-    if Head(As) != Head(Bs):
-        return False
-    return Equal(Tail(As), Tail(Bs))
-    
 def Length(As):
     """ Restituisce il numero di elementi contenuto nella lista As """
     def LengthI(Ls, n):
@@ -209,4 +195,58 @@ def FoldReverse(Ls):
     """ Reverse in termini di Fold """
     def Concatenate(x, Ls):
         return Append(Ls, MakeList(x))
-    return Fold(Concatenate, Ls, EmptyList())    
+    return Fold(Concatenate, Ls, EmptyList())
+    
+#-----------------------------------------------
+# MAIN function per testare tutte le soluzioni
+#-----------------------------------------------
+if __name__ == "__main__":
+    Ls = MakeRange(1, 5)
+    print("MakeList(7): ", end='')
+    PrintList(Ls)
+    
+    Rs = MakeRandomInts(10, 1, 100)
+    print("MakeRandomInts(10, 1, 100): ", end='')
+    PrintList(Rs)
+    
+    Cs = MakeRange(3,7)
+    print("MakeRange(3,7): ", end='')
+    PrintList(Cs)
+
+    print("Head(Ls):", Head(Ls))
+    print("Tail(Ls):", Tail(Ls))
+    
+    print("Nth(Ls, 5):", Nth(Ls, 5))
+    
+    print("Length(Ls):", Length(Ls))
+
+    Bs = MakeRange(1, 3)
+    print("Append:", Append(Ls, Bs))
+    
+    print("Scala:", Scala(Bs, 0.5))
+    print("Quadrati:", Quadrati(Bs))
+        
+    print("Map:", Map(lambda x: x**3, Ls))        
+    print("Filter:", Filter(lambda x: x % 2 == 0, Ls))
+    
+    print("Reverse:", Reverse(Ls))    
+    
+    print("Reverse:", Sum(Ls))
+    Xs = MakeRange(1, 5)
+    print("Reverse:", Prod(Xs))
+    PrintList(Xs)
+    
+    
+    print("Contains 4:", Contains(Append(Xs, Xs), 4))
+    print("Count 4:", Count(Append(Xs, Xs), 4))
+    
+    print("Remove first 4:", RemoveFirst(Append(Xs, Xs), 4))
+    print("Remove all   4:", RemoveAll(Append(Xs, Xs), 4))
+
+    print("FoldMin:", Min(MakeRange(4, 17)))
+    print("FoldMax:", Max(MakeRange(4, 17)))
+
+    print("FoldLength(Ls):", FoldLength(Ls))
+    print("FoldMap:", FoldMap(lambda x: x**3, Ls))        
+    print("FoldFilter:", FoldFilter(lambda x: x % 2 == 0, Ls))
+    print("FoldReverse:", FoldReverse(Ls)) 
