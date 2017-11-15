@@ -26,7 +26,7 @@ def MakeCipher(offset, char2int, int2char):
     return lambda s: ''.join([Shifter(c) for c in s.lower()])
 
 def CleanText(s, blanks):
-    """ Remove useless character """
+    """ Remove useless characters """
     r = s.replace('\n', ' ')
     r = r.replace("'", ' ')
     r = r.replace("\xa0", ' ')
@@ -50,7 +50,7 @@ def File2String(filename):
     return fh.read()    
     
 def ComputeFrequencies(s):
-    """ Deduce the letters used in a given text """
+    """ Compute frequencies of chars in given text """
     Blanks =',?\n”“ ’!&".$()/:_-;@*0123456789#%[]«»„à—'
     Ds = CountChars(CleanText(s, Blanks).lower())
 
@@ -62,7 +62,8 @@ def ComputeFrequencies(s):
 
 def ChiSquare(Os, Es):
     """ Calcola la statistica di ChiSquare tra le frequenze di caratteri osservata
-        nel testo di cifrato, e quella di riferimento per la lingua italiana """
+        nel testo di cifrato, e quella di riferimento per la lingua italiana 
+        Link: https://it.wikipedia.org/wiki/Test_chi_quadrato """
     for k in Es:
         if k not in Os:
             Os[k] = 0
