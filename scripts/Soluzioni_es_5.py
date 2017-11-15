@@ -97,13 +97,15 @@ def ContaCaratteri(s):
     D = {}          # Costruttore di un dizionario vuoto
     for c in s:     # Ciclo su tutti caratteri della stringa
         if c in D:
-            D[c] += 1
+            D[c] = D[c] + 1  # Equivalente a Ds[c] += 1
         else:
             D[c] = 1
     return D
 
 def CalcolaFrequenza(D):
     F = {}
+    # Commento su builtin  'sum'
+    # Link: https://docs.python.org/3/library/functions.html#sum
     tot = sum(D.values())
     # Soluzione semplice
     for key in D:
@@ -136,7 +138,7 @@ def ComputeTables(Ls):
     for key in sorted(Ls):  # Lista di chiavi, ordine sulle chiavi
         char2int[key] = idx
         int2char[idx] = key
-        idx = idx + 1        
+        idx = idx + 1   # Equivalente a idx += 1
     return char2int, int2char
 
 #-----------------------------------------------
