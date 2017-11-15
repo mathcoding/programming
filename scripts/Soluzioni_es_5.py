@@ -23,13 +23,14 @@ def Equal(As, Bs):
 
 # Soluzione Esercizio 2: intersezione di due tuple
 def IntersectRec(As, Bs):
-    """ Intersects the elements in As with the elements in Bs.
-        Do not count duplicates elements """
-    Rs = ()
-    for a in As:
-        if a in Bs and a not in Rs:
-            Rs = Rs + (a,)
-    return Rs
+    def InterI(As, Rs):
+        if As == () or As == []:
+            return Rs
+        if As[0] in Bs and As[0] not in Rs:
+            return InterI(As[1:], Rs+(As[0],))
+        return InterI(As[1:], Rs)
+    
+    return InterI(As, tuple())
 
 def Intersect(As, Bs):
     """ Intersects the elements in As with the elements in Bs.
@@ -45,9 +46,17 @@ def TestZero(n=1):
         # Passa alla funzione due tuple
         if Intersect((2,3,4,2,1,2,7), (2,3,2,3,4)) == (2, 3, 4):
             return 'ok'
-    else:
+    if n == 2:
         # Passa alla funzione due liste, ritorna una tupla
         if Intersect([2,3,4,2,1,2,7], [2,3,2,3,4]) == (2, 3, 4):
+            return 'ok'
+    if n == 3:
+        # Passa alla funzione due liste, ritorna una tupla
+        if IntersectRec((2,3,4,2,1,2,7), (2,3,2,3,4)) == (2, 3, 4):
+            return 'ok'
+    if n == 4:
+        # Passa alla funzione due liste, ritorna una tupla
+        if IntersectRec([2,3,4,2,1,2,7], [2,3,2,3,4]) == (2, 3, 4):
             return 'ok'
     return 'failed'
 
@@ -61,6 +70,17 @@ def RimuoviDuplicati(As, Bs):
             Rs = Rs + [a]
     for r in Rs:
         As.remove(r)
+
+def RimuoviDuplicatiRec(As, Bs):
+    def RMI(Ls):
+        if Ls == []:
+            return
+        if Ls[0] in Bs:
+            As.remove(Ls[0])
+        RMI(Ls[1:])
+        
+    return RMI(As[:])        
+        
 # Per soluzioni esercizio 4 e 5, lezione del 16/11/2017
 
 # Soluzione Esercizio 6
@@ -135,12 +155,20 @@ if __name__ == "__main__":
     print('Bs == Cs:', Equal(Bs,Cs))
     
     # Test per esercizio 3
-    print('Test zero: '+TestZero())
+    print('Test zero liste: '+TestZero(1))
+    print('Test zero tuple: '+TestZero(2))
+    print('Test zero ricorsiva liste: '+TestZero(3))
+    print('Test zero ricorsiva tuple: '+TestZero(4))
     
     # Test per esercizio 3
     L1 = [2, 4, 2, 5, 6, 6, 3, 2, 9, 4]
     L2 = [2, 4, 7]
     RimuoviDuplicati(L1, L2)
+    print('L1 =', L1)
+    
+    L1 = [2, 4, 2, 5, 6, 6, 3, 2, 9, 4]
+    L2 = [2, 4, 7]
+    RimuoviDuplicatiRec(L1, L2)
     print('L1 =', L1)
     
     # Test per esercizio 6
