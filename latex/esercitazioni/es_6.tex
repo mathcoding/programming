@@ -1,0 +1,157 @@
+\documentclass[11pt,a4]{article}
+
+\usepackage[margin=2cm]{geometry}
+
+\usepackage{amsmath}
+\usepackage{url}
+
+\usepackage{amsmath}
+\usepackage{url}
+
+\usepackage[utf8]{inputenc}
+
+% Default fixed font does not support bold face
+\DeclareFixedFont{\ttb}{T1}{txtt}{bx}{n}{10} % for bold
+\DeclareFixedFont{\ttm}{T1}{txtt}{m}{n}{10}  % for normal
+
+% Custom colors
+\usepackage{color}
+\definecolor{deepblue}{rgb}{0,0,0.5}
+\definecolor{deepred}{rgb}{0.6,0,0}
+\definecolor{deepgreen}{rgb}{0,0.5,0}
+
+\usepackage{listings}
+
+% Python style for highlighting
+\newcommand\pythonstyle{\lstset{
+language=Python,
+basicstyle=\ttm,
+otherkeywords={self},             % Add keywords here
+keywordstyle=\ttb\color{deepblue},
+emph={MyClass,__init__},          % Custom highlighting
+emphstyle=\ttb\color{deepred},    % Custom highlighting style
+stringstyle=\color{deepgreen},
+frame=tb,                         % Any extra options here
+showstringspaces=false            % 
+}}
+
+
+% Python environment
+\lstnewenvironment{python}[1][]
+{
+\pythonstyle
+\lstset{#1}
+}
+{}
+
+% Python for external files
+\newcommand\pythonexternal[2][]{{
+\pythonstyle
+\lstinputlisting[#1]{#2}}}
+
+% Python for inline
+\newcommand\pythoninline[1]{{\pythonstyle\lstinline!#1!}}
+
+
+\usepackage{collectbox}
+
+\newcommand{\mybox}[2]{$\quad$\fbox{
+\begin{minipage}{#1cm}
+\hfill\vspace{#2cm}
+\end{minipage}
+}}
+
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\rhead{Programmazione 1 - Esercitazione 6}
+
+\include{book_header}
+
+\begin{document}
+\thispagestyle{empty}
+\hrule
+\begin{center}
+   {\Large {\bf Programmazione 1 \hspace{3cm} $\quad \quad \quad$ Esercitazione 6}}
+\end{center}
+{\bf Cognome: }\hspace{2.5cm} {\bf Nome: } \hspace{2.5cm} {\bf Matricola: } \\\
+\hrule
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{}
+
+\begin{enumerate}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\item Scrivere un predicato {\tt IsSet(As, P)} che controlla se la lista {\tt As} rappresenta
+un insieme di oggetti, ovvero la lista non contiene nessuna coppia di elementi uguali. Due elementi 'x' e 'y'
+sono considerati uguali, se il predicato {\tt P(x, y)} vale {\tt True}.
+
+Qual'è la complessità dell'algoritmo che avete usato per implementare questa funzione?
+
+\mybox{15}{2.75}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\item Scrivere una funzione {\tt InsertAt(As, value, i)} che inserisce nella lista {\tt As} l'elemento {\tt value}
+in posizione {\tt i}.
+
+Qual'è la complessità dell'algoritmo che avete usato per implementare questa funzione?
+
+\mybox{15}{2.75}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\item Scrivere una funzione {\tt Insert(As, z, Cmp=lambda x,y: x<y)} che inserisce nella lista {\tt As} l'elemento {\tt value},
+rispettando le seguenti regole: se l'elemento è già presente nella lista non viene aggiunto,
+altrimenti l'elemento viene aggiunto tra due valori 'x' e 'y' di {\tt As} in modo tale che 
+valga la relazione $x < z < y$, o più in generale {\tt Cmp(x,z) == True} e {\tt Cmp(z,y) == True}.
+
+Qual'è la complessità dell'algoritmo che avete usato per implementare questa funzione?
+
+\mybox{15}{2.75}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\item Scrivere una funzione {\tt Contains(As, z)} che prende in input una lista di numeri interi ordinata in ordine crescente
+e controlla se 'z' è contenuta nella lista As. Scrivere la funzione in modo che esegua in tempo $O(\log(n))$, dove
+$n$ è la lunghezza della lista.
+
+\mybox{15}{2.75}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\item Si supponga di voler rappresentare un vettore di $\mathbb{R}^n$ come una lista di numeri {\tt float},
+e le matrici come liste di vettori, ovvero le righe della matrice.
+Usando questa rappresentazione, possiamo utilizzare delle operazioni sulle liste di liste per esprimere
+operazioni base tra vettori e matrici. 
+
+Si chiede di implementare le seguenti operazioni fondamentali come operazioni tra liste, e liste di liste:
+
+\begin{enumerate}
+\item {\bf DotProduct}: prodotto tra due vettori, componente per componente. Dati due vettori $x$ e $y$ in $\mathbb{R}^n$
+calcolare lo scalara $p=\sum_{i = 1,\dots,n} x_i y_i$.
+\item {\bf MatrixVector}: prodotto tra matrice e vettore. Data una matrice $A$ di dimensione $m \times n$ e un vettore $x$ in $\mathbb{R}^n$ calcolare il vettore $t$, in cui $t_i=\sum_{j = 1,\dots,n} a_{ij} x_j$.
+\item {\bf MatrixMatrix}: prodotto tra due matrici. Date le due matrici $A$ di dimensione $m \times n$ e $B$ di dimensione $n \times m$ calcolare la matrice $P$, in cui $p_{ij}=\sum_{k = 1,\dots,n} a_{ik} b_{kj}$.
+\item {\bf Transpose}: matrice trasposta. Data la matrice $A$ di dimensione $m \times n$ calcolare la sua trasposta,
+ovvero la matrice B in cui $b_{ij} = a_{ji}$.
+
+\end{enumerate}
+
+\mybox{15}{8}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\item {\bf CHALLENGE 4:} Il problema delle $n$-regine richiede di posizionare $n$ regine su una scacchiera
+di dimensione $n \times n$, in modo tale che nessuna regina ne tenga un'altra sotto scacco. Si eseguano in ordine 
+i punti seguenti:
+\begin{enumerate}
+\item Decidere che struttura dati usare per rappresentare una soluzione.
+\item Modificare la funzione {\tt DrawMatrix} vista per i frattali in modo tale che dia una rappresentazione grafica di una soluzione: il nero rappresenta la posizione di una regina, il bianco rappresenta una posizione vuota.
+\item Scrivere una funzione, che dato un posizionamento delle regine rappresentato con la struttura dati scelta,
+controlli se il posizionamento è ammissibile, ovvero nessuna regina ne tiene un'altra sotto scacco.
+\item Scrivere una funzione che prende in input un numero interno $n>4$ e restituisce in output una soluzione al problema
+delle $n$-regine.
+\item Qual'è la complessità dell'algoritmo che avete usato per implementare la vostra soluzione?
+\end{enumerate}
+
+Per la {\bf CHALLENGE}, potete mandare l'implementazione in python per email (facoltativo).
+\end{enumerate}
+
+\end{document}
