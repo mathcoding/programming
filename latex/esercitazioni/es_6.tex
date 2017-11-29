@@ -100,7 +100,8 @@ Qual'è la complessità dell'algoritmo che avete usato per implementare questa f
 \mybox{15}{2.75}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\item Scrivere una funzione {\tt Insert(As, z, Cmp=lambda x,y: x<y)} che inserisce nella lista {\tt As} l'elemento {\tt value},
+\item Scrivere una funzione {\tt Insert(As, z, Cmp=lambda x,y: x<y)} che inserisce nella lista (già ordinata)
+{\tt As} l'elemento {\tt value},
 rispettando le seguenti regole: se l'elemento è già presente nella lista non viene aggiunto,
 altrimenti l'elemento viene aggiunto tra due valori 'x' e 'y' di {\tt As} in modo tale che 
 valga la relazione $x < z < y$, o più in generale {\tt Cmp(x,z) == True} e {\tt Cmp(z,y) == True}.
@@ -127,7 +128,7 @@ Si chiede di implementare le seguenti operazioni fondamentali come operazioni tr
 
 \begin{enumerate}
 \item {\bf DotProduct}: prodotto tra due vettori, componente per componente. Dati due vettori $x$ e $y$ in $\mathbb{R}^n$
-calcolare lo scalara $p=\sum_{i = 1,\dots,n} x_i y_i$.
+calcolare lo scalare $p=\sum_{i = 1,\dots,n} x_i y_i$.
 \item {\bf MatrixVector}: prodotto tra matrice e vettore. Data una matrice $A$ di dimensione $m \times n$ e un vettore $x$ in $\mathbb{R}^n$ calcolare il vettore $t$, in cui $t_i=\sum_{j = 1,\dots,n} a_{ij} x_j$.
 \item {\bf MatrixMatrix}: prodotto tra due matrici. Date le due matrici $A$ di dimensione $m \times n$ e $B$ di dimensione $n \times m$ calcolare la matrice $P$, in cui $p_{ij}=\sum_{k = 1,\dots,n} a_{ik} b_{kj}$.
 \item {\bf Transpose}: matrice trasposta. Data la matrice $A$ di dimensione $m \times n$ calcolare la sua trasposta,
