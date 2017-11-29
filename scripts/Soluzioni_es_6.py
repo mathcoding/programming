@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-Soluzioni Esercitazione 5
+Soluzioni Esercitazione 6
 
 Created on Tue Nov 28 20:57:35 2017
 
