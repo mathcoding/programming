@@ -1,0 +1,156 @@
+\documentclass[11pt,a4]{article}
+
+\usepackage[margin=2cm]{geometry}
+
+\usepackage{multicol}
+
+\usepackage{amsmath}
+\usepackage{url}
+
+\usepackage{amsmath}
+\usepackage{url}
+
+\usepackage[utf8]{inputenc}
+
+% Default fixed font does not support bold face
+\DeclareFixedFont{\ttb}{T1}{txtt}{bx}{n}{10} % for bold
+\DeclareFixedFont{\ttm}{T1}{txtt}{m}{n}{10}  % for normal
+
+% Custom colors
+\usepackage{color}
+\definecolor{deepblue}{rgb}{0,0,0.5}
+\definecolor{deepred}{rgb}{0.6,0,0}
+\definecolor{deepgreen}{rgb}{0,0.5,0}
+
+\usepackage{listings}
+
+% Python style for highlighting
+\newcommand\pythonstyle{\lstset{
+language=Python,
+basicstyle=\ttm,
+otherkeywords={self},             % Add keywords here
+keywordstyle=\ttb\color{deepblue},
+emph={MyClass,__init__},          % Custom highlighting
+emphstyle=\ttb\color{deepred},    % Custom highlighting style
+stringstyle=\color{deepgreen},
+frame=tb,                         % Any extra options here
+showstringspaces=false            % 
+}}
+
+
+% Python environment
+\lstnewenvironment{python}[1][]
+{
+\pythonstyle
+\lstset{#1}
+}
+{}
+
+% Python for external files
+\newcommand\pythonexternal[2][]{{
+\pythonstyle
+\lstinputlisting[#1]{#2}}}
+
+% Python for inline
+\newcommand\pythoninline[1]{{\pythonstyle\lstinline!#1!}}
+
+
+\usepackage{collectbox}
+
+\newcommand{\mybox}[2]{$\quad$\fbox{
+\begin{minipage}{#1cm}
+\hfill\vspace{#2cm}
+\end{minipage}
+}}
+
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\rhead{Programmazione 1 - Esercitazione 5}
+
+\include{book_header}
+
+\begin{document}
+\thispagestyle{empty}
+\hrule
+\begin{center}
+   {\Large {\bf Programmazione 1 \hspace{3cm} $\quad \quad \quad$ Tutorato 3}}
+\end{center}
+
+\hrule
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{}
+
+\begin{enumerate}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\item Scrivere due funzioni {\tt MapFR(x)} e {\tt FilterFR(x)} che implementano la $map$ e la $filter$ utilizzando la FoldRight.
+
+\begin{python}
+def FoldRight(P, As, v):
+    if IsEmpty(As):
+        return v
+    return P(Head(As), FoldRight(P, Tail(As), v))
+\end{python}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\item Scrivere due funzioni {\tt MapFL(x)} e {\tt FilterFL(x)} che implementano la $map$ e la $filter$ utilizzando la FoldLeft.
+
+\begin{python}
+def FoldLeft(P, As, v):
+    if IsEmpty(As):
+        return v
+    return FoldLeft(P,Tail(As),P(z,Head(As))
+\end{python}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\item Ricordando le strutture viste:
+
+\begin{multicols}{2}
+\small
+\fbox{\parbox[t][3.5cm][t]{7.4cm}{
+\vspace{0.2cm}
+\textbf{def} $F(X_1, \dots, X_n):$\\
+$\hspace*{0.5cm}$ \textbf{def} $Fiter(Y_1,...,Y_m):$\\
+$\hspace*{1.0cm}$    \textbf{if} $Proposizione(Y_1,...,Y_m)==True:$\\
+\vspace{0.2cm}
+$\hspace*{1.5cm}$        \textbf{return} $Y_1,...,Y_{m'}$ $(m'\le m)$\\
+\vspace{0.2cm}
+$\hspace*{1.0cm}$    \textbf{return}  $Fiter(\tilde{Y_1},...,\tilde{Y_m})$\\
+$\hspace*{0.5cm}$    $\textbf{return}$ $Fiter(\tilde{X_1},...,\tilde{X_m})$\\}}
+\columnbreak
+
+\fbox{\parbox[t][3.5cm][t]{7.4cm}{
+\vspace{0.2cm}
+\textbf{def} $F(X_1, \dots, X_n):$\\
+$\hspace*{0.5cm}$    $Y_i=\tilde{X_i}$ per $i=0,\dots,m$\\
+$\hspace*{0.5cm}$ (le $\tilde{X_i}$ sono costruite a partire dalle $X_i$)\\ 
+$\hspace*{0.5cm}$    \textbf{while} $Proposizione(Y_1,...,Y_m)==False:$\\
+$\hspace*{1.4cm}$     $Y_i=\tilde{Y_i}$ per $i=0,\dots,m$\\
+\\
+$\hspace*{0.5cm}$    \textbf{return}  $Y_1,...,Y_{m'}$}}
+
+\end{multicols}
+
+
+Si scrivano in entrambi i modi le funzioni seguenti:
+
+\begin{enumerate}
+\item {\tt Fib(n)}:  prende in input un numero intero $n$ e restituisce l'n-esimo elemento della successione di Fibonacci.
+\item {\tt Fn(n)}: prende in input un numero intero $n$ e restituisce l'n-esimo elemento della successione $Fn$ definita ricorsivamente:
+\begin{equation*}
+\mbox{Fn}(x) = \left\{ \begin{array}{ll}
+ n & \mbox{ se } n<3, \\
+ f(n-1)f(n-2)+nf(n-3) & \mbox{ se } n\ge3.
+\end{array} \right.
+\end{equation*}
+\item {\tt Equal(As,Bs)}: prende in input due liste e restituisce {True} se sono uguali, {False} altrimenti.
+\item {\tt PrimiPrimi(n)}: prende in input un numero intero $n$ e restituisce una lista dei primi n numeri primi.
+\end{enumerate}
+Dando una stima in termini di O-grande della complessità dell'algoritmo.
+
+\end{enumerate}
+
+\end{document}
