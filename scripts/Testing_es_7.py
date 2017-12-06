@@ -5,13 +5,6 @@ Created on Wed Dec  6 10:47:43 2017
 @author: gualandi
 """
 
-# -*- coding: utf-8 -*-
-"""
-Created on Tue Dec  5 21:45:33 2017
-
-@author: gualandi
-"""
-
 # Parse a file where for each row we have:
 #  user id | age | gender | occupation | zip code
 #  1|24|M|technician|85711
