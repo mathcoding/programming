@@ -1,0 +1,144 @@
+\documentclass[11pt,a4]{article}
+
+\usepackage[margin=2cm]{geometry}
+
+\usepackage{multicol}
+
+\usepackage{amsmath}
+\usepackage{url}
+
+\usepackage{amssymb}
+
+\usepackage{amsmath}
+\usepackage{url}
+
+\usepackage[utf8]{inputenc}
+
+% Default fixed font does not support bold face
+\DeclareFixedFont{\ttb}{T1}{txtt}{bx}{n}{10} % for bold
+\DeclareFixedFont{\ttm}{T1}{txtt}{m}{n}{10}  % for normal
+
+% Custom colors
+\usepackage{color}
+\definecolor{deepblue}{rgb}{0,0,0.5}
+\definecolor{deepred}{rgb}{0.6,0,0}
+\definecolor{deepgreen}{rgb}{0,0.5,0}
+
+\usepackage{listings}
+
+% Python style for highlighting
+\newcommand\pythonstyle{\lstset{
+language=Python,
+basicstyle=\ttm,
+otherkeywords={self},             % Add keywords here
+keywordstyle=\ttb\color{deepblue},
+emph={MyClass,__init__},          % Custom highlighting
+emphstyle=\ttb\color{deepred},    % Custom highlighting style
+stringstyle=\color{deepgreen},
+frame=tb,                         % Any extra options here
+showstringspaces=false            % 
+}}
+
+
+% Python environment
+\lstnewenvironment{python}[1][]
+{
+\pythonstyle
+\lstset{#1}
+}
+{}
+
+% Python for external files
+\newcommand\pythonexternal[2][]{{
+\pythonstyle
+\lstinputlisting[#1]{#2}}}
+
+% Python for inline
+\newcommand\pythoninline[1]{{\pythonstyle\lstinline!#1!}}
+
+
+\usepackage{collectbox}
+
+\newcommand{\mybox}[2]{$\quad$\fbox{
+\begin{minipage}{#1cm}
+\hfill\vspace{#2cm}
+\end{minipage}
+}}
+
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\rhead{Programmazione 1 - Tutorato 3}
+
+\include{book_header}
+
+\begin{document}
+\thispagestyle{empty}
+\hrule
+\begin{center}
+   {\Large {\bf Programmazione 1 \hspace{3cm} $\quad \quad \quad$ Tutorato 3}}
+\end{center}
+
+\hrule
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{}
+
+\begin{enumerate}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\item Scrivere una funzione che prende in input una stringa e un dizionario. Se il dizionario è vuoto restituisce una stringa criptata e un dizionario che decripta, altrimenti utilizza il dizionario dato in input per decriptare la stringa.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\item Scrivere una funzione che dato $n$ restituisce la matrice di Hilbert di ordine $n$:
+
+\begin{center}
+$H=\begin{pmatrix}
+       1      & \frac{1}{2} & \frac{1}{3} & \cdots \\[1ex] 
+  \frac{1}{2} & \frac{1}{3} & \frac{1}{4} &  \\[1ex]
+  \frac{1}{3} & \frac{1}{4} & \frac{1}{5} &  \\
+    \vdots    &             &             & \ddots 
+\end{pmatrix}$
+$H(i,j)=\frac{1}{i+j+1}$ $i,j=0,\dots,n-1$
+\end{center}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\item Scrivere una funzione {\tt MapMat(Matrix, f)} che implementa la "map" su matrici intese come liste di liste. 
+Ad esempio:\\
+\begin{center}
+$
+\Bigg(
+\begin{bmatrix} 
+0 & \pi & 2\pi\\[4pt]
+\pi & \frac{3}{2}\pi & \frac{\pi}{4} \\[4pt]
+\pi & 0 & \frac{-1}{4}\pi\end{bmatrix}, sin \Bigg) \longmapsto 
+\begin{bmatrix} 
+0 & 0 & 0\\[4pt]
+0 & -1 & \sqrt[]{2}/2 \\[4pt]
+0 & 0 & -\sqrt[]{2}/2\end{bmatrix}
+$
+\end{center}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\item Scrivere una funzione che data una matrice e un predicato $p$, 
+restituisce la matrice stessa portando a 0 gli elementi $x$ tali che $p(x)=False$.\\
+
+\item Ricordando le due funzioni:
+\begin{python}
+def MakeImage(F, n, scale=0.01):
+    data = [scale*i for i in range(-n,n)]
+    return np.matrix([[F(complex(a, b)) for a in data] for b in data])
+\end{python}
+\begin{python}
+def DrawImage(F, n, scale):
+    m = MakeImage(F, n, scale)
+    plt.figure(figsize=(8,8))
+    img = plt.imshow(m, extent=(-scale*n, scale*n, -scale*n, scale*n), cmap='hot')
+    plt.show()
+\end{python}
+implementare una funzione che prende in input una funzione $f:\mathbb{C}\rightarrow \mathbb{C}$ e restituisce il grafico dell'insieme $J(f)=\{ z\in \mathbb{C}: \exists \delta$ tale che $|(f^n(z))|<\delta$ $\forall n \}$ dove:
+$f^n=\underbrace{f\circ\ldots\circ f}_{n\ \mathrm{volte}}$
+\end{enumerate}
+
+\end{document}
