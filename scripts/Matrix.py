@@ -8,9 +8,9 @@ Created on Wed Dec 13 09:14:24 2017
 class Matrix(object):
     def __init__(self, nrows, ncols, a=0):
         if type(nrows) != int:
-            raise TypeError("Pistola! Il numero di righe deve essere un intero")
+            raise TypeError("Giovine matricola, il numero di righe deve essere un intero")
         if type(ncols) != int:
-            raise TypeError("Pistola! Il numero di colonne deve essere un intero")
+            raise TypeError("Giovine matricola, il numero di colonne deve essere un intero")
             
         self.n = nrows
         self.m = ncols
