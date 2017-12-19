@@ -96,7 +96,6 @@ che permettano di controllarne il corretto funzionamento.
 \item Scrivere la funzione {\tt ParseRating(filename)} che legge il file {\tt filename}
 e restituisce un dizionario con una chiave per ogni coppia (user id, item id), e come valore il rispettivo rating. 
 Il rating deve essere memorizzato come un numero intero.
-
 Il file di input contiene le informazioni seguenti:
 \begin{center}
 {\tt user id | item id | rating | timestamp}
@@ -105,35 +104,35 @@ Il file di input contiene le informazioni seguenti:
 \mybox{15}{2}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\item Scrivere una funzione {\tt ComputeAverage(Ls)} che prende in input una lista di valutazioni e calcola
+\item Scrivere una funzione {\tt ComputeAverage(Ls)} che prende in input un dizionario di valutazioni (come letto all'esercizio 1) e calcola
 la media aritmetica di tutte le valutazioni. La funzione deve restituire la media.
 
 \mybox{15}{2}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\item Scrivere una funzione {\tt ComputeItemAverage(Ls)} che prende in input una lista di valutazioni e calcola
+\item Scrivere una funzione {\tt ComputeItemAverage(Ls)} che prende in input un dizionario di valutazioni e calcola
 per ciascun film (in genere si parla di {\it item}) la media aritmetica di tutte le valutazioni. La funzione deve restituire un dizionario con una chiave
 per ogni film id e come valore la media di voti ricevuti da quel film. Se un film non ha ricevuto nessun voto,
 il suo valore potrebbe essere la media globale.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\item Scrivere una funzione {\tt ComputeUserAverage(Ls)} che prende in input una lista di valutazioni e calcola
+\item Scrivere una funzione {\tt ComputeUserAverage(Ls)} che prende in input un dizionario di valutazioni e calcola
 per ciascun utente la media aritmetica di tutte le valutazioni. La funzione deve restituire un dizionario con una chiave
 per ogni user id e come valore la media di voti dati da quell'utente. Se un utente non ha dato nessun voto,
 il suo valore potrebbe essere la media globale.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\item Scrivere una funzione {\tt ComputeUserTypeAverage(Ls)} che prende in input una lista di valutazioni e calcola
+\item Scrivere una funzione {\tt ComputeUserTypeAverage(Ls)} che prende in input un dizionario di valutazioni e calcola
 per ciascuna categoria di utente la media aritmetica di tutte le valutazioni. La funzione deve restituire un dizionario con una chiave
 per ciascuna categoria di utente e come valore la media dei voti dati da quella categoria. Se una categoria non ha dato nessun voto,
 il suo valore potrebbe essere la media globale.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\item Scrivere una funzione {\tt PredictAvg(Ls)} che prende in input la lista di valutazioni da predire
+\item Scrivere una funzione {\tt PredictAvg(Ls)} che prende in input il dizionario di valutazioni da predire
 e per ogni coppia (utente, film) per cui si deve fare una previsione, restituisce la media globale.
 Usare la funzione passandogli in input la lista di valutazioni contenuta nel file {\tt u1.test}.
 In questo caso, la funzione deve restituire un dizionario, in cui la chiave è la coppia (id utente, id item), e il
