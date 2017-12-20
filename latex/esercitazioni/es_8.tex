@@ -109,26 +109,22 @@ la media aritmetica di tutte le valutazioni. La funzione deve restituire la medi
 
 \mybox{15}{2}
 
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \item Scrivere una funzione {\tt ComputeItemAverage(Ls)} che prende in input un dizionario di valutazioni e calcola
 per ciascun film (in genere si parla di {\it item}) la media aritmetica di tutte le valutazioni. La funzione deve restituire un dizionario con una chiave
-per ogni film id e come valore la media di voti ricevuti da quel film. Se un film non ha ricevuto nessun voto,
-il suo valore potrebbe essere la media globale.
+per ogni film id e come valore la media di voti ricevuti da quel film. 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \item Scrivere una funzione {\tt ComputeUserAverage(Ls)} che prende in input un dizionario di valutazioni e calcola
 per ciascun utente la media aritmetica di tutte le valutazioni. La funzione deve restituire un dizionario con una chiave
-per ogni user id e come valore la media di voti dati da quell'utente. Se un utente non ha dato nessun voto,
-il suo valore potrebbe essere la media globale.
+per ogni user id e come valore la media di voti dati da quell'utente.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\item Scrivere una funzione {\tt ComputeUserTypeAverage(Ls)} che prende in input un dizionario di valutazioni e calcola
+\item Scrivere una funzione {\tt ComputeUserTypeAverage(Ls, Us)} che prende in input un dizionario di valutazioni e un dizionario con i dati degli utenti e calcola
 per ciascuna categoria di utente la media aritmetica di tutte le valutazioni. La funzione deve restituire un dizionario con una chiave
-per ciascuna categoria di utente e come valore la media dei voti dati da quella categoria. Se una categoria non ha dato nessun voto,
-il suo valore potrebbe essere la media globale.
+per ciascuna categoria di utente e come valore la media dei voti dati da quella categoria.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -147,7 +143,7 @@ $$
 	\mbox{RMSE}(\hat{y}, y) = \sqrt{\frac{\sum_{i=1}^n (\hat{y}_i - y_i)^2}{n}}
 $$
 
-\mybox{15}{3}
+\mybox{15}{2.5}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \item Valutare il RMSE per le predizioni ottenute con la funzione {\tt PredictAverage} usando le valutazioni contenute nel file di test.
@@ -158,6 +154,8 @@ $$
 \item Scrivere le funzioni {\tt PredictAvgItem(Ls)}, {\tt PredictAvgUser(Ls)} e {\tt PredictAvgCategory(Ls)}, che effettuano
 le predizioni di voto in base alle rispettive medie calcolate con le soluzioni degli esercizi precedenti.
 Usando come funzione di valutazione la RMSE, confrontare le prestazioni dei 4 semplici approcci proposti.
+Se un film non ha ricevuto nessun voto oppure un utente non ha dato nessun voto
+il rispettivo valore predetto potrebbe essere la media globale.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \item {\bf CHALLENGE 5:} Elaborare un metodo per ottenere il valore di RMSE il più piccolo possibile. Il metodo proposto
