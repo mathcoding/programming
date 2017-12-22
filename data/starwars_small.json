@@ -1,0 +1,61 @@
+{
+  "nodes": [
+    {
+      "name": "OBI-WAN",
+      "value": 147,
+      "colour": "#48D1CC"
+    },
+    {
+      "name": "JAR JAR",
+      "value": 41,
+      "colour": "#9a9a00"
+    },
+    {
+      "name": "PADME",
+      "value": 74,
+      "colour": "#DDA0DD"
+    },
+    {
+      "name": "DARTH MAUL",
+      "value": 5,
+      "colour": "#808080"
+    },
+    {
+      "name": "DARTH VADER",
+      "value": 58,
+      "colour": "#000000"
+    },
+    {
+      "name": "LUKE",
+      "value": 160,
+      "colour": "#3881e5"
+    }
+  ],
+  "links": [
+    {
+      "source": 147,
+      "target": 41,
+      "value": 1
+    },
+    {
+      "source": 41,
+      "target": 74,
+      "value": 1
+    },
+    {
+      "source": 74,
+      "target": 5,
+      "value": 1
+    },
+    {
+      "source": 5,
+      "target": 58,
+      "value": 1
+    },
+    {
+      "source": 58,
+      "target": 160,
+      "value": 26
+    }
+  ]
+}

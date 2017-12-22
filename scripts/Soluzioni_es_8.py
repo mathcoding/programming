@@ -164,10 +164,11 @@ def SingleTest(Users, n, Metric=RMSE):
     print('Avg file/user:', Metric(PredictAvgAvg(TrainingSet, TestSet), TestSet))
     
     
-def PredictAvgAvg(TrainingSet, TestSet):
+def PredictAvgAvg(TrainingSet, TestSet, Users):
     avg = ComputeAverage(TrainingSet)
     Is = ComputeItemAverage(TrainingSet)    
     Us = ComputeUserAverage(TrainingSet) 
+    As = ComputeUserTypeAverage(TrainingSet, Users) 
     Ps = {}
     for key in TestSet:
         user_id, item_id = key
@@ -206,6 +207,7 @@ if __name__ == "__main__":
         print(RMSE(PredictAvgItem(TrainingSet, TestSet), TestSet))
         print(RMSE(PredictAvgUser(TrainingSet, TestSet), TestSet))
         print(RMSE(PredictAvgCategory(TrainingSet, TestSet, Users), TestSet))
+        print(RMSE(PredictAvgAvg(TrainingSet, TestSet), TestSet))
     else:
         for n in range(1,6):
             print('Test set: training=u{}.base, test=u{}.test:'.format(n, n))
