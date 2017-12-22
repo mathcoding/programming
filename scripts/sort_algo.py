@@ -5,7 +5,7 @@ Created on Wed Nov 15 17:23:55 2017
 @author: gualandi
 """
 
-from pairslist import IsEmpty, Min, RemoveFirst, MakeList, MakeRandomInts, Head, Filter, Append
+from pairslist import IsEmpty, Min, RemoveFirst, MakeList, MakeRandomInts, Head, Tail, Filter, Append
 
 def SelectionSort(As):
     """ Semplice implementazione ricorsiva di selection sort """

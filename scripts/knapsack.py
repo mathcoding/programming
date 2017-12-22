@@ -114,7 +114,8 @@ if __name__ == "__main__":
     Is = [(randint(1,100), randint(5, 25)) for _ in range(30)]
     B = 95
     
-    
-    
+    import cProfile
+    cProfile.run('KR(Is,B)')
+    cProfile.run('DP(Is,B)')
     #print(KR(Ls, B))
     #print(DP(Ls, B))
