@@ -1,12 +1,12 @@
 # Programmazione 1 at UniPv - Materiale di supporto
 
-Questo repository contiene il materiale usato al [corso di Programmazione 1](http://matematica.unipv.it/gualandi/programming/) tenuto presso il dipartimento di matematica dell'Università di Pavia.
+Questo repository contiene il materiale usato al [corso di Programmazione 1](http://matematica.unipv.it/gualandi/programming/) tenuto presso il dipartimento di matematica dell'Università di Pavia, aggiornato per l' a.a. 2025/2026.
 
 ### Lista di notebooks usati a lezione
 
-| Data | Notebook | Link |
-|:-|:-|:-|
-|**[2025/09/30]**|*Lab 1: Introduzione*|[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/mathcoding/programming/blob/master/notebooks/Lab1_Introduzione.ipynb)|
+| Data | Notebook | Link | Html |
+|:-|:-|:-|:-|
+|**[2025/09/30]**|*Lab 1: Introduzione*|[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/mathcoding/programming/blob/master/notebooks/Lab1_Introduzione.ipynb)|[Html](https://github.com/mathcoding/programming/blob/master/notebooks/Lab1_Introduzione.ipynb)
 
 
 ### Versione di Python
