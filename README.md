@@ -6,7 +6,7 @@ Questo repository contiene il materiale usato al [corso di Programmazione 1](htt
 
 | Data | Notebook | Link | Html |
 |:-|:-|:-|:-|
-|**[2025/09/30]**|*Lab 1: Introduzione*|[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/mathcoding/programming/blob/master/notebooks/Lab1_Introduzione.ipynb)|[Html](https://github.com/mathcoding/programming/blob/master/notebooks/Lab1_Introduzione.ipynb)
+|**[2025/09/30]**|*Lab 1: Introduzione*|[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/mathcoding/programming/blob/master/notebooks/Lab1_Introduzione.ipynb)|[Html](https://github.com/mathcoding/programming/blob/master/notebooks/Lab1_Introduzione.ipynb)|
 
 
 ### Versione di Python
