@@ -1,13 +1,16 @@
 # Programmazione 1 at UniPv - Materiale di supporto
 
-Questo repository contiene il materiale usato al [corso di Programmazione 1](http://www-dimat.unipv.it/~gualandi/programming/) tenuto presso il dipartimento di matematica, all'Università di Pavia.
+Questo repository contiene il materiale usato al [corso di Programmazione 1](http://matematica.unipv.it/gualandi/programming/) tenuto presso il dipartimento di matematica dell'Università di Pavia.
 
-Per poter provare i notebook, senza installare nulla sul PC, potete usare il sito seguente:
+# Lista di notebooks usati a lezione
 
-[Prova Jupyter!](https://try.jupyter.org/)
+| Data | Notebook | Link |
+|:-|:-|:-|
+|**[2025/09/30]**|*Lab 1*|[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/mathcoding/opt4ds/blob/master/notebooks/Lab1_Introduzione.ipynb)|
 
-# Versione di Python
-Gli script e i notebook sono tutti scritti facendo riferimento alla versione 3.4 (o maggiore) di Python.
+
+### Versione di Python
+Gli script e i notebook sono tutti scritti facendo riferimento alla versione 3.9 di Python.
 Per l'installazione si consiglia di usare Anaconda, scaricandolo al link seguente:
 
 [Download Anaconda](https://www.anaconda.com/download/)
