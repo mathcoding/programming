@@ -9,6 +9,12 @@ Questo repository contiene il materiale usato al [corso di Programmazione 1](htt
 |**[2025/10/02]**|[Lab 2: Espressioni logiche](https://github.com/mathcoding/programming/blob/master/notebooks/Lab2_EspressioniLogiche.ipynb)|[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/mathcoding/programming/blob/master/notebooks/Lab2_EspressioniLogiche.ipynb)|[Html]|
 |**[2025/09/30]**|[Lab 1: Introduzione](https://github.com/mathcoding/programming/blob/master/notebooks/Lab1_Introduzione.ipynb)|[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/mathcoding/programming/blob/master/notebooks/Lab1_Introduzione.ipynb)|[Html]|
 
+### Lista di notebooks usati in laboratorio
+
+| Data | Notebook | Link |
+|:-|:-|:-|
+|**[2025/10/03]**|[Es 1: Espressioni aritmetiche](https://github.com/mathcoding/programming/blob/master/notebooks/Es1_EspressioniAritmetiche.ipynb)|[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/mathcoding/programming/blob/master/notebooks/Es1_EspressioniAritmetiche.ipynb)|[Html]|
+
 
 ### Versione di Python
 Gli script e i notebook sono tutti scritti facendo riferimento alla versione 3.9 di Python.
