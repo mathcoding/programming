@@ -15,6 +15,7 @@ Questo repository contiene il materiale usato al [corso di Programmazione 1](htt
 
 | Data | Notebook | Link |
 |:-|:-|:-|
+|**[2025/10/17]**|[Es 3: Processi di calcolo iterativi e ricorsivi](https://github.com/mathcoding/programming/blob/master/notebooks/Es3_Processi_di_calcolo.ipynb)|[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/mathcoding/programming/blob/master/notebooks/Es3_Processi_di_calcolo.ipynb)|[Html]|
 |**[2025/10/10]**|[Es 2: Funzioni ricorsive](https://github.com/mathcoding/programming/blob/master/notebooks/Es2_Funzioni_ricorsive.ipynb)|[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/mathcoding/programming/blob/master/notebooks/Es2_Funzioni_ricorsive.ipynb)|[Html]|
 |**[2025/10/03]**|[Es 1: Espressioni aritmetiche](https://github.com/mathcoding/programming/blob/master/notebooks/Es1_EspressioniAritmetiche.ipynb)|[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/mathcoding/programming/blob/master/notebooks/Es1_EspressioniAritmetiche.ipynb)|[Html]|
 
