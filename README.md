@@ -28,6 +28,10 @@ Per l'installazione si consiglia di usare Anaconda, scaricandolo al link seguent
 
 [Download Anaconda](https://www.anaconda.com/download/)
 
+Esercitazione su Escher usata per stage alle superiori:
+
+* [Ricorsioni di Escher + Esercizi](https://github.com/stegua/escher-2k24)
+
 Altri link utili:
 
 * [Documentazione ufficiale di Python3 (in inglese)](https://docs.python.org/3/)
