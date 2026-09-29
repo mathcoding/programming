@@ -6,12 +6,26 @@ Questo repository contiene il materiale usato al [corso di Programmazione 1](htt
 
 | Data | Notebook | Link |
 |:-|:-|:-|
-|**[2026/09/29]**|[Lab 1: Introduzione](https://github.com/mathcoding/programming/blob/master/notebooks/Lab1_Introduzione.ipynb)|[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/mathcoding/programming/blob/master/notebooks/Lab1_Introduzione.ipynb)|[Html]|
+|**[2025/10/24]**|[Lab 8: Dati composti: coppie e numeri razionali](https://github.com/mathcoding/programming/blob/master/notebooks/Lab8_DatiComposti.ipynb)|[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/mathcoding/programming/blob/master/notebooks/Lab8_DatiComposti.ipynb)|[Html]|
+|**[2025/10/24]**|[Lab 7: Funzioni High-order](https://github.com/mathcoding/programming/blob/master/notebooks/Lab6_PlotDiFunzioni.ipynb)|[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/mathcoding/programming/blob/master/notebooks/Lab7_HighOrderFunctions.ipynb)|[Html]|
+|**[2025/10/22]**|[Ricorsioni grafiche di Escher](https://github.com/mathcoding/programming/blob/master/notebooks/RicorsioniGrafiche.ipynb)|[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/mathcoding/programming/blob/master/notebooks/Lab7_HighOrderFunctions.ipynb)|[Html]|
+|**[2025/10/22]**|[Lab 6: Plot di funzioni da R in R](https://github.com/mathcoding/programming/blob/master/notebooks/Lab6_PlotDiFunzioni.ipynb)|[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/mathcoding/programming/blob/master/notebooks/Lab6_PlotDiFunzioni.ipynb)|[Html]|
+|**[2025/10/09]**|[Lab 5: Processi di calcolo ricorsivi e iterativi](https://github.com/mathcoding/programming/blob/master/notebooks/Lab5_ProcessiDiCalcolo.ipynb)|[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/mathcoding/programming/blob/master/notebooks/Lab5_ProcessiDiCalcolo.ipynb)|[Html]|
+|**[2025/10/07]**|[Lab 3: Calcolo della radice quadrata](https://github.com/mathcoding/programming/blob/master/notebooks/Lab3_RadiceQuadrata.ipynb)|[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/mathcoding/programming/blob/master/notebooks/Lab3_RadiceQuadrata.ipynb)|[Html]|
+|**[2025/10/02]**|[Lab 2: Espressioni logiche](https://github.com/mathcoding/programming/blob/master/notebooks/Lab2_EspressioniLogiche.ipynb)|[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/mathcoding/programming/blob/master/notebooks/Lab2_EspressioniLogiche.ipynb)|[Html]|
+|**[2025/09/30]**|[Lab 1: Introduzione](https://github.com/mathcoding/programming/blob/master/notebooks/Lab1_Introduzione.ipynb)|[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/mathcoding/programming/blob/master/notebooks/Lab1_Introduzione.ipynb)|[Html]|
 
 ### Lista di notebooks usati in laboratorio
 
 | Data | Notebook | Link |
 |:-|:-|:-|
+|**[2025/10/31]**|*Libreria pairslist da completare*|[pairslist_2K25.py](https://github.com/mathcoding/programming/blob/master/scripts/pairslist_2K25.py)|
+|**[2025/10/24]**|[Es 5: Funzioni hig-order (e integrali per parti)](https://github.com/mathcoding/programming/blob/master/notebooks/Es5_HighOrderFunctions.ipynb)|[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/mathcoding/programming/blob/master/notebooks/Es5_HighOrderFunctions.ipynb)|[Html]|
+|**[2025/10/24]**|[Es 4: Plot di funzioni da R in R](https://github.com/mathcoding/programming/blob/master/notebooks/Es4_PlotDiFunzioni.ipynb)|[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/mathcoding/programming/blob/master/notebooks/Es4_PlotDiFunzioni.ipynb)|[Html]|
+|**[2025/10/17]**|[Es 3: Processi di calcolo iterativi e ricorsivi](https://github.com/mathcoding/programming/blob/master/notebooks/Es3_Processi_di_calcolo.ipynb)|[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/mathcoding/programming/blob/master/notebooks/Es3_Processi_di_calcolo.ipynb)|[Html]|
+|**[2025/10/10]**|[Es 2: Funzioni ricorsive](https://github.com/mathcoding/programming/blob/master/notebooks/Es2_Funzioni_ricorsive.ipynb)|[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/mathcoding/programming/blob/master/notebooks/Es2_Funzioni_ricorsive.ipynb)|[Html]|
+|**[2025/10/03]**|[Es 1: Espressioni aritmetiche](https://github.com/mathcoding/programming/blob/master/notebooks/Es1_EspressioniAritmetiche.ipynb)|[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/mathcoding/programming/blob/master/notebooks/Es1_EspressioniAritmetiche.ipynb)|[Html]|
+
 
 ### Versione di Python
 Gli script e i notebook sono tutti scritti facendo riferimento alla versione 3.9 di Python.
