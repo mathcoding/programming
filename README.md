@@ -6,8 +6,9 @@ Questo repository contiene il materiale usato al [corso di Programmazione 1](htt
 
 | Data | Notebook | Link |
 |:-|:-|:-|
-|**[2026/09/30]**|[Lab 1: Introduzione](https://github.com/mathcoding/programming/blob/master/notebooks/Lab1_Introduzione.ipynb)|[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/mathcoding/programming/blob/master/notebooks/Lab1_Introduzione.ipynb)|[Html]|
+|**[2026/10/08]**|[Lab 3: Radice quadrata](https://github.com/mathcoding/programming/blob/master/notebooks/Lab3_RadiceQuadrata.ipynb)|[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/mathcoding/programming/blob/master/notebooks/Lab3_RadiceQuadrata.ipynb)|[Html]|
 |**[2026/10/01]**|[Lab 2: Espressioni logiche](https://github.com/mathcoding/programming/blob/master/notebooks/Lab2_EspressioniLogiche.ipynb)|[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/mathcoding/programming/blob/master/notebooks/Lab2_EspressioniLogiche.ipynb)|[Html]|
+|**[2026/09/30]**|[Lab 1: Introduzione](https://github.com/mathcoding/programming/blob/master/notebooks/Lab1_Introduzione.ipynb)|[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/mathcoding/programming/blob/master/notebooks/Lab1_Introduzione.ipynb)|[Html]|
 
 ### Lista di notebooks usati in laboratorio
 
