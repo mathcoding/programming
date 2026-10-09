@@ -14,6 +14,7 @@ Questo repository contiene il materiale usato al [corso di Programmazione 1](htt
 
 | Data | Notebook | Link |
 |:-|:-|:-|
+|**[2026/10/09]**|[Es 2: Funzioni ricorsive](https://github.com/mathcoding/programming/blob/master/notebooks/Es2_Funzioni_ricorsive.ipynb)|[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/mathcoding/programming/blob/master/notebooks/Es2_Funzioni_ricorsive.ipynb)|[Html]|
 |**[2026/10/02]**|[Es 1: Espressioni aritmetiche](https://github.com/mathcoding/programming/blob/master/notebooks/Es1_EspressioniAritmetiche.ipynb)|[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/mathcoding/programming/blob/master/notebooks/Es1_EspressioniAritmetiche.ipynb)|[Html]|
 
 ### Versione di Python
