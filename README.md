@@ -21,6 +21,14 @@ Questo repository contiene il materiale usato al [corso di Programmazione 1](htt
 |**[2026/10/09]**|[Es 2: Funzioni ricorsive](https://github.com/mathcoding/programming/blob/master/notebooks/Es2_Funzioni_ricorsive.ipynb)|[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/mathcoding/programming/blob/master/notebooks/Es2_Funzioni_ricorsive.ipynb)|[Html]|
 |**[2026/10/02]**|[Es 1: Espressioni aritmetiche](https://github.com/mathcoding/programming/blob/master/notebooks/Es1_EspressioniAritmetiche.ipynb)|[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/mathcoding/programming/blob/master/notebooks/Es1_EspressioniAritmetiche.ipynb)|[Html]|
 
+### Lista di notebooks usati a tutorato
+
+| Data | Notebook | Link | Soluzioni | Link |
+|:-|:-|:-|:-|:-|
+|**[2026/10/22]**|[Tut 2: Ricorsione e plot di funzioni](https://github.com/mathcoding/programming/blob/master/tutorato2027/Tut2_Ricorsione_e_Plot.ipynb)|[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/mathcoding/programming/blob/master/tutorato2027/Tut2_Ricorsione_e_Plot.ipynb)|||[Html]|
+|**[2026/10/15]**|[Tut 1: Ricorsione e iterazione](https://github.com/mathcoding/programming/blob/master/tutorato2027/Tut1_Ricorsione_e_iterazione.ipynb)|[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/mathcoding/programming/blob/master/tutorato2027/Tut1_Ricorsione_e_iterazione.ipynb)|[Soluzioni](https://github.com/mathcoding/programming/blob/master/tutorato2027/Tut1S_Ricorsione_e_iterazione_con_soluzioni.ipynb)|[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/mathcoding/programming/blob/master/tutorato2027/Tut1S_Ricorsione_e_iterazione_con_soluzioni.ipynb)|[Html]|
+
+
 ### Versione di Python
 Gli script e i notebook sono tutti scritti facendo riferimento alla versione 3.12 di Python (o versioni successive).
 Per l'installazione si consiglia di usare Anaconda, scaricandolo al link seguente:
