@@ -5,3 +5,4 @@ scripts/__pycache__/*
 *.log
 *.out
 *.bak
+/aa2026/notebooks/__pycache__
