@@ -6,6 +6,8 @@ Questo repository contiene il materiale usato al [corso di Programmazione 1](htt
 
 | Data | Notebook | Link |
 |:-|:-|:-|
+|**[2026/10/21]**|[Lab 7: High Order Functions](https://github.com/mathcoding/programming/blob/master/notebooks/Lab7_HighOrderFunctinos.ipynb)|[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/mathcoding/programming/blob/master/notebooks/Lab7_HighOrderFunctinos.ipynb)|[Html]|
+|**[2026/10/21]**|[Ricorsioni grafiche](https://github.com/mathcoding/programming/blob/master/notebooks/RicorsioniGrafiche.ipynb)|[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/mathcoding/programming/blob/master/notebooks/RicorsioniGrafiche.ipynb)|[Html]|
 |**[2026/10/13]**|[Lab 6: PlotDiFunzioni](https://github.com/mathcoding/programming/blob/master/notebooks/Lab6_PlotDiFunzioni.ipynb)|[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/mathcoding/programming/blob/master/notebooks/Lab6_PlotDiFunzioni.ipynb)|[Html]|
 |**[2026/10/13]**|[Lab 5: Processi di Calcolo](https://github.com/mathcoding/programming/blob/master/notebooks/Lab5_ProcessiDiCalcolo.ipynb)|[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/mathcoding/programming/blob/master/notebooks/Lab5_ProcessiDiCalcolo.ipynb)|[Html]|
 |**[2026/10/08]**|[Lab 3: Radice quadrata](https://github.com/mathcoding/programming/blob/master/notebooks/Lab3_RadiceQuadrata.ipynb)|[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/mathcoding/programming/blob/master/notebooks/Lab3_RadiceQuadrata.ipynb)|[Html]|
@@ -16,6 +18,7 @@ Questo repository contiene il materiale usato al [corso di Programmazione 1](htt
 
 | Data | Notebook | Link |
 |:-|:-|:-|
+|**[2026/10/16]**|[Es 5: High Order Functions](https://github.com/mathcoding/programming/blob/master/notebooks/Es5_HighOrderFunctions.ipynb)|[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/mathcoding/programming/blob/master/notebooks/Es5_HighOrderFunctions.ipynb)|[Html]|
 |**[2026/10/16]**|[Es 4: Plot di funzioni](https://github.com/mathcoding/programming/blob/master/notebooks/Es4_PlotDiFunzioni.ipynb)|[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/mathcoding/programming/blob/master/notebooks/Es4_PlotDiFunzioni.ipynb)|[Html]|
 |**[2026/10/16]**|[Es 3: Processi di calcolo](https://github.com/mathcoding/programming/blob/master/notebooks/Es3_Processi_di_calcolo.ipynb)|[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/mathcoding/programming/blob/master/notebooks/Es3_Processi_di_calcolo.ipynb)|[Html]|
 |**[2026/10/09]**|[Es 2: Funzioni ricorsive](https://github.com/mathcoding/programming/blob/master/notebooks/Es2_Funzioni_ricorsive.ipynb)|[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/mathcoding/programming/blob/master/notebooks/Es2_Funzioni_ricorsive.ipynb)|[Html]|
