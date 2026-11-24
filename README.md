@@ -6,6 +6,7 @@ Questo repository contiene il materiale usato al [corso di Programmazione 1](htt
 
 | Data | Notebook | Link |
 |:-|:-|:-|
+|**[2026/11/24]**|[Lab 12: Numeri complessi, vettori, matrici e frattali](https://github.com/mathcoding/programming/blob/master/notebooks/Lab12_NumeriComplessiVettoriMatrici.ipynb)|[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/mathcoding/programming/blob/master/notebooks/Lab12_NumeriComplessiVettoriMatrici.ipynb)|[Html]|
 |**[2026/11/19]**|[Lab 11: Builtin data: liste, tuple e dizionari](https://github.com/mathcoding/programming/blob/master/notebooks/Lab11_TupleListeDizionari.ipynb)|[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/mathcoding/programming/blob/master/notebooks/Lab11_TupleListeDizionari.ipynb)|[Html]|
 |**[2026/11/17]**|[Lab 10: Builtin data: stringhe](https://github.com/mathcoding/programming/blob/master/notebooks/Lab10_DatiCompostiBuiltin.ipynb)|[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/mathcoding/programming/blob/master/notebooks/Lab10_DatiCompostiBuiltin.ipynb)|[Html]|
 |**[2026/11/9]**|[Lab 9: PairsList](https://github.com/mathcoding/programming/blob/master/notebooks/Lab9_PairsList.ipynb)|[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/mathcoding/programming/blob/master/notebooks/Lab9_PairsList.ipynb)|[Html]|
